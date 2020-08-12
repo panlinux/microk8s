@@ -15,7 +15,7 @@ def try_set_file_permissions(file):
     os.chmod(file, 0o660)
     try:
         shutil.chown(file, group='microk8s')
-    except:
+    except LookupError:
         # not setting the group means only the current user can access the file
         pass
 
