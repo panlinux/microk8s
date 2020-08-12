@@ -606,8 +606,10 @@ def remove_dqlite_node(node, force=False):
             delete_dqlite_node([node_ep], my_ep)
         elif node_ep and not force:
             print(
-                "Removal failed. Node {} is registered with dqlite. Please, run first 'microk8s leave' on the departing node. \n"
-                "If the node is not available anymore and will never attempt to join the cluster in the future use the '--force' flag \n"
+                "Removal failed. Node {} is registered with dqlite. "
+                "Please, run first 'microk8s leave' on the departing node. \n"
+                "If the node is not available anymore and will never attempt to join the cluster "
+                "in the future use the '--force' flag \n"
                 "to unregister the node while removing it.".format(node)
             )
             exit(1)
