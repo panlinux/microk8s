@@ -252,7 +252,7 @@ def dashboard_proxy() -> None:
             instance.run(command)
         except KeyboardInterrupt:
             return
-    except ProviderInstanceNotFoundError as provider_error:
+    except ProviderInstanceNotFoundError:
         _not_installed(echo)
         return 1
 
@@ -278,7 +278,7 @@ def run(cmd) -> None:
         command = cmd[0]
         cmd[0] = "microk8s.{}".format(command)
         instance.run(cmd)
-    except ProviderInstanceNotFoundError as provider_error:
+    except ProviderInstanceNotFoundError:
         _not_installed(echo)
         return 1
 
@@ -310,7 +310,7 @@ def _get_microk8s_commands() -> List:
             return complete
         else:
             return ["start", "stop"]
-    except ProviderNotFound as provider_error:
+    except ProviderNotFound:
         return ["start", "stop"]
 
 
