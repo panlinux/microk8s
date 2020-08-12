@@ -21,7 +21,7 @@ from .common.utils import (
     is_token_expired,
 )
 
-from flask import Flask, jsonify, request, abort, Response
+from flask import Flask, jsonify, request, Response
 
 app = Flask(__name__)
 CLUSTER_API = "cluster/api/v1.0"
