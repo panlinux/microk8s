@@ -9,7 +9,6 @@ echo "Disabling Ingress"
 ARCH=$(arch)
 TAG="0.25.1"
 DEFAULT_CERT="- ' '" # This default value is always fine when deleting resources.
-EXTRA_ARGS="- --publish-status-address=127.0.0.1"
 
 
 KUBECTL="$SNAP/kubectl --kubeconfig=${SNAP_DATA}/credentials/client.config"
